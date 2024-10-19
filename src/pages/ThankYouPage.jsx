@@ -1,14 +1,19 @@
 import Plant from "../assets/thankyou-plant.png";
+
 const ThankYouPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="mb-4 text-3xl font-bold">Congratulations Order Placed!</h1>
-      <img src={Plant} alt="Thank you" className="w-64 mb-4" />
-      <p>
-        Thank you for choosing Chaperone services. We will soon get in touch
-        with you!
-      </p>
-      <button>Continue Shopping</button>
+    <div className="flex flex-col items-center justify-center h-full px-3">
+     <div className="w-full ">
+      <h2 className="text-lg mb-2 text-[#0F4811] font-normal text-center">Your Cart</h2>
+     </div>
+     <hr className="border-[#B0B0B0] mb-4 border w-full" />
+        <h2 className="mb-4 text-2xl font-semibold  text-[#165315] text-center">Congratulations! Order Placed!</h2>
+        <img src={Plant} alt="Plant icon" className="w-24 h-24 mx-auto mb-4" />
+        <p className="mb-4 font-normal text-center text-[#165315]  text-[16px]">Thank you for choosing Chaperone services. We will soon get in touch with you!</p>
+        <button className=" w-[307px] py-2 font-semibold text-white bg-[#165315] text-[16px] rounded hover:bg-green-600">
+          Continue Shopping
+        </button>
+
     </div>
   );
 };
