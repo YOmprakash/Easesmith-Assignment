@@ -25,7 +25,7 @@ const Header = ({cartQuantity}) => {
       <TopBanner />
 
       {/* Main Header Section */}
-      <header className="pt-6 bg-white ">
+      <header className="pt-6 mb-4 bg-white ">
         <div className="container flex items-center justify-between px-4 mx-auto">
           {/* Left Section: Logo */}
           <div className="flex items-center">
