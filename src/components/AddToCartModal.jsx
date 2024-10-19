@@ -1,39 +1,42 @@
 import React from 'react';
+import { AiOutlineClose } from 'react-icons/ai'; // Importing close icon from react-icons
 
 const AddToCartModal = ({ product, isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null; // Do not render modal if it's not open
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="w-full max-w-sm p-6 bg-white rounded-lg">
+      <div className="relative w-full max-w-sm p-6 bg-white rounded-lg">
+        {/* Close Icon at Top Right */}
+        <button
+          className="absolute text-gray-600 top-2 right-2 hover:text-black"
+          onClick={onClose}
+        >
+          <AiOutlineClose size={20} />
+        </button>
+
         {/* Product Image */}
         <img src={product.image} alt={product.name} className="object-contain w-full h-48" />
 
         {/* Product Details */}
-        <h2 className="mt-4 text-lg font-bold">{product.name}</h2>
-        <p className="mb-2 text-sm text-gray-600">{product.description}</p>
+        <h2 className="mt-4   mb-1 text-xl font-[500]">{product.name}</h2>
+        <p className="mb-2 text-sm font-normal text-[#838383]">{product.description}</p>
 
         {/* Product Price */}
         <div className="flex items-center">
-          <span className="text-xl font-bold">₹{product.discountedPrice}</span>
+          <span className="text-xl font-semibold text-[#5E5A5A]">₹{product.discountedPrice}</span>
           {product.totalPrice !== product.discountedPrice && (
-            <span className="ml-2 text-sm text-gray-500 line-through">₹{product.totalPrice}</span>
+            <span className="ml-2 text-[16px] font-normal text-[#5E5A5A] opacity-70 line-through">₹{product.totalPrice}</span>
           )}
         </div>
 
-        {/* Confirm and Cancel Buttons */}
-        <div className="flex justify-between mt-4">
+        {/* Confirm Button */}
+        <div className="flex justify-start mt-4">
           <button
-            className="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600"
+            className="px-4 py-2 text-white text-sm font-[500] bg-[#165315] rounded-lg hover:bg-green-600 mb-1 "
             onClick={onConfirm}
           >
-            Confirm
-          </button>
-          <button
-            className="px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600"
-            onClick={onClose}
-          >
-            Cancel
+            Add to Cart
           </button>
         </div>
       </div>

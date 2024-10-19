@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="w-full mx-auto overflow-hidden sm:w-64 ">
       {/* Product Image with Wishlist Icon */}
-      <div className="relative border border-[#000] border-opacity-30 max-w-[268px]  h-[310px]">
+      <div className="relative border border-[#000] border-opacity-30 md:max-w-[268px]  h-[310px]">
         <img src={image} alt={name} className="object-contain w-full max-w-[230px] h-[230px] mt-8 mx-auto" />
         <button className="absolute text-gray-500 top-3 right-3 ">
           <AiOutlineHeart size={25}  className='hover:text-[#165315] text-[#575757]'  />
@@ -45,7 +45,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Product Details */}
-      <div className="p-4">
+      <div className="py-4">
         <h2 className="mb-1 text-xl font-[500]">{name}</h2>
         <p className="mb-3 text-sm font-normal text-[#838383]">{description}</p>
 
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Add to Cart & Buy on Rent Buttons */}
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between w-full ">
           <button  onClick={handleAddToCartClick} className=" text-sm bg-[#165315] text-white py-2 px-2 rounded-lg font-semibold ">
             - Add to Cart +
           </button>

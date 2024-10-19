@@ -6,8 +6,23 @@ import FilterSection from '../components/FilterSection';
 import Footer from "../components/Footer";
 // import NurserySlider from "../components/NurserySlider";
 import SearchBar from "../components/SearchBar"; // Import your new SearchBar component
+import { useState } from "react";
 
 const ProductListingPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 6;
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = mockProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // Calculate total pages needed
+  const totalPages = Math.ceil(mockProducts.length / productsPerPage);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <>
     <div className="container p-6 mx-auto ">
@@ -74,13 +89,39 @@ const ProductListingPage = () => {
       
       
       <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 md:grid-cols-3">
-        {mockProducts.map((product) => (
+        {currentProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div >
-     {/* //paginaton */}
-      </div>
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-6 mb-6">
+  <button
+    className={`px-4 py-2 mr-2 ${currentPage === 1 ? 'bg-[#F3A939] text-[#F0FFE5] cursor-not-allowed' : 'bg-[#165315] text-[#F0FFE5] hover:bg-[#144D14]'}`}
+    onClick={() => handlePageChange(currentPage - 1)}
+    disabled={currentPage === 1}
+  >
+    Previous
+  </button>
+
+  {Array.from({ length: totalPages }, (_, index) => (
+    <button
+      key={index + 1}
+      className={`px-4 py-2 mx-1 ${currentPage === index + 1 ? 'bg-[#165315] text-[#F0FFE5]' : 'bg-[#6A6A6A] text-white hover:bg-[#575757]'}`}
+      onClick={() => handlePageChange(index + 1)}
+    >
+      {index + 1}
+    </button>
+  ))}
+
+  <button
+    className={`px-4 py-2 ml-2 ${currentPage === totalPages ? 'bg-[#F3A939] text-[#F0FFE5] cursor-not-allowed' : 'bg-[#165315] text-[#F0FFE5] hover:bg-[#144D14]'}`}
+    onClick={() => handlePageChange(currentPage + 1)}
+    disabled={currentPage === totalPages}
+  >
+    Next
+  </button>
+</div>
+
      
       </div>
       
