@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar"; // Import your new SearchBar component
 import { useState } from "react";
 
-const ProductListingPage = () => {
+const ProductListingPage = ({updateCartQuantity}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -90,7 +90,7 @@ const ProductListingPage = () => {
       
       <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 md:grid-cols-3">
         {currentProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} updateCartQuantity={updateCartQuantity} />
         ))}
       </div>
       {/* Pagination Controls */}
@@ -106,7 +106,7 @@ const ProductListingPage = () => {
   {Array.from({ length: totalPages }, (_, index) => (
     <button
       key={index + 1}
-      className={`px-4 py-2 mx-1 ${currentPage === index + 1 ? 'bg-[#165315] text-[#F0FFE5]' : 'bg-[#6A6A6A] text-white hover:bg-[#575757]'}`}
+      className={`px-4 py-2 mx-1 ${currentPage === index + 1 ? 'bg-[#F0FFE5] border border-[#165315] text-[#000]' : 'bg-[#6A6A6A] text-white hover:bg-[#575757]'}`}
       onClick={() => handlePageChange(index + 1)}
     >
       {index + 1}

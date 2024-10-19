@@ -7,9 +7,9 @@ import { FiMenu, FiX } from "react-icons/fi"; // For Hamburger Menu and Close
 import Logo from "../assets/logo.png";
 import TopBanner from "./TopBanner";
 
-const Header = () => {
+const Header = ({cartQuantity}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
-  const [activeLink, setActiveLink] = useState("/"); // State for active link
+  
   const location = useLocation(); // Get the current location (path)
  
  
@@ -17,10 +17,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle menu open/close
   };
 
-  // Function to handle link click
-  const handleLinkClick = (path) => {
-    setActiveLink(path); // Set the clicked link as active
-  };
+ 
 
   return (
     <>
@@ -53,7 +50,7 @@ const Header = () => {
                 className="text-black font-[500] hover:text-gray-900 cursor-pointer"
               />
               <div className="absolute -top-3 right-0 bg-[#F3A939] text-black text-xs font-bold px-1 rounded-full">
-                0
+                {cartQuantity}
               </div>
             </div>
 
@@ -145,7 +142,7 @@ const Header = () => {
               />
               <span className="text-sm hidden md:block  font-[500]">Cart</span>
               <div className="absolute -top-3 right-0 bg-[#F3A939] text-black text-xs font-bold px-1 rounded-full">
-                0
+                {cartQuantity}
               </div>
             </div>
           </div>

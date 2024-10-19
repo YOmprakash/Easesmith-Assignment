@@ -1,19 +1,32 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductListingPage from './pages/ProductListingPage';
-import ThankYouPage from './pages/ThankYouPage';
-import Header from './components/Header';
-import HomePage from './pages/HomePage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import toast CSS
+
+import ProductListingPage from "./pages/ProductListingPage";
+import ThankYouPage from "./pages/ThankYouPage";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import { useState } from "react";
 
 function App() {
+  const [cartQuantity, setCartQuantity] = useState(0); // State for cart quantity
+
+  // Function to add items to the cart
+  const updateCartQuantity = (quantity) => {
+    setCartQuantity(prevQuantity => prevQuantity + quantity);
+  };
+
   return (
     <Router>
-      <Header />
+      <Header cartQuantity={cartQuantity} />
       <Routes>
-      <Route path="/" element={<HomePage />} />
-        <Route path="/shop" element={<ProductListingPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/shop" element={<ProductListingPage updateCartQuantity={updateCartQuantity} />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
-    
+
+      {/* Add ToastContainer here */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </Router>
   );
 }
