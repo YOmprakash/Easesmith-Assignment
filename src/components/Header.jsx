@@ -28,7 +28,7 @@ const Header = () => {
       <TopBanner />
 
       {/* Main Header Section */}
-      <header className="py-4 bg-white shadow">
+      <header className="py-4 bg-white ">
         <div className="container flex items-center justify-between px-4 mx-auto">
           {/* Left Section: Logo */}
           <div className="flex items-center">

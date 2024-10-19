@@ -1,34 +1,29 @@
-import React from "react";
+
 import ProductCard from "../components/ProductCard";
 import mockProducts from "../data";
-import img91 from "../assets/image91.png";
-import { FiSearch } from "react-icons/fi";
+
 import FilterSection from '../components/FilterSection';
 import Footer from "../components/Footer";
+// import NurserySlider from "../components/NurserySlider";
+import SearchBar from "../components/SearchBar"; // Import your new SearchBar component
+
 const ProductListingPage = () => {
   return (
     <>
     <div className="container p-6 mx-auto ">
       {/* Search Bar Section */}
-      <div className="flex items-center justify-center max-w-[500px] mx-auto mb-10 border-b-2">
-        <FiSearch color="#838383" className="text-3xl " />
-        <input
-          type="text"
-          placeholder="Search Plant"
-          className="w-full max-w-lg p-3 focus:outline-none"
-        />
-        <img src={img91} alt="Logo" className="w-10 ml-4" />
-      </div>
+      <SearchBar />
+      
 
       {/* Category Buttons */}
       <div className="flex justify-start mb-8 space-x-4">
         <button
           className="bg-[#165315]
-] text-white px-6 py-2 "
+] text-white w-[114px] py-2  "
         >
           Plants
         </button>
-        <button className="px-6 py-2 text-black border hover:bg-blue-600">
+        <button className=" w-[114px] py-2 text-black border ">
           Pots
         </button>
       </div>
@@ -45,21 +40,50 @@ const ProductListingPage = () => {
         deleniti et porro aspernatur.
       </p>
 
-      {/* Slider Section Placeholder */}
-      <div className="mb-10">
-        <p className="text-lg italic text-center text-gray-500">*slider*</p>
-      </div>
+     
+<div className="py-5">
+{/* <NurserySlider /> */}
+<p>slider</p>
+</div>
+     
 
       <div className="flex flex-col gap-6 md:flex-row">
       <aside className="w-full md:w-1/4">
           <FilterSection />
         </aside>
       {/* Product Grid */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div>
+      <div className="flex ">
+      <p className="font-normal text-[15px] text-[#6A6A6A]">300 products</p>
+      <div className="mb-4 ml-4">
+          
+          <select 
+            id="sort" 
+            
+            className="p-2 w-[139px] border text-white  bg-[#165315] border-none outline-none"
+          >
+            <option value="default">SORT BY</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
+        </div>
+      </div>
+      
+      
+      
+      <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2 md:grid-cols-3">
         {mockProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+      <div >
+     {/* //paginaton */}
+      </div>
+     
+      </div>
+      
       </div>
     </div>
     <Footer/> 
