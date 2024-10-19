@@ -25,7 +25,7 @@ const Header = ({cartQuantity}) => {
       <TopBanner />
 
       {/* Main Header Section */}
-      <header className="py-4 bg-white ">
+      <header className="pt-6 bg-white ">
         <div className="container flex items-center justify-between px-4 mx-auto">
           {/* Left Section: Logo */}
           <div className="flex items-center">
@@ -135,13 +135,13 @@ const Header = ({cartQuantity}) => {
             </div>
 
             {/* Cart Icon */}
-            <div className="relative flex flex-col items-center ">
+            <div className="relative flex flex-col items-center "> 
               <LiaShoppingCartSolid
                 size={28}
                 className="text-black font-[500]   cursor-pointer"
               />
               <span className="text-sm hidden md:block  font-[500]">Cart</span>
-              <div className="absolute -top-3 right-0 bg-[#F3A939] text-black text-xs font-bold px-1 rounded-full">
+              <div className="absolute -top-4 -right-2 bg-[#F3A939] text-black text-xs font-normal px-[6px] py-[2px] rounded-full">
                 {cartQuantity}
               </div>
             </div>
