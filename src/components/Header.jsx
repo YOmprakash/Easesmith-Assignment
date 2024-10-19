@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaUser, FaShoppingCart } from 'react-icons/fa'; // Importing Profile and Cart Icons
+import { LiaShoppingCartSolid } from "react-icons/lia";
+import { LuUser2 } from "react-icons/lu"; // Importing Profile and Cart Icons
 import Logo from '../assets/logo.png';
 const Header = () => {
   return (
@@ -13,12 +14,12 @@ const Header = () => {
         
       </div>
    
-    <header className="bg-white  py-4">
+    <header className="py-4 bg-white">
     
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container flex items-center justify-between px-4 mx-auto">
         {/* Left Section: Logo and Brand Name */}
         <div className="flex items-center">
-          <img src={Logo} alt="Logo" className="w-14 mr-2 object-contain" /> {/* Use your logo image here */}
+          <img src={Logo} alt="Logo" className="object-contain mr-2 w-14" /> {/* Use your logo image here */}
           <span className="text-2xl font-semibold text-[#0F4811]">Chaperone</span> {/* Replace with your brand name */}
         </div>
 
@@ -38,15 +39,15 @@ const Header = () => {
         {/* Right Section: Profile Icon and Cart Icon */}
         <div className="flex items-center space-x-6">
         <div className='flex flex-col items-center'>
-        <FaUser className="text-black font-[500] hover:text-gray-900 text-xl cursor-pointer" />
-        <span>My Profile</span>
+        <LuUser2 size={22} className="text-black font-[500] hover:text-gray-900  cursor-pointer" />
+        <span className='text-sm font-[500]'>My Profile</span>
         </div>
-        <div className='flex flex-col items-center relative'>
-          <FaShoppingCart className="text-black font-[500] hover:text-gray-900 text-xl cursor-pointer" /> {/* Cart Icon */}
-          <span>Cart</span>
+        <div className='relative flex flex-col items-center'>
+          <LiaShoppingCartSolid size={28} className="text-black font-[500] hover:text-gray-900  cursor-pointer" /> {/* Cart Icon */}
+          <span className='text-sm font-[500]'>Cart</span>
         
 
-          <div className="absolute -top-4  right-0 bg-[#F3A939] text-black text-xs font-bold  px-1 rounded-full">0</div>
+          <div className="absolute -top-3  right-0 bg-[#F3A939] text-black text-xs font-bold  px-1 rounded-full">0</div>
         </div>
         </div>
       </div>

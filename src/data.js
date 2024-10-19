@@ -47,6 +47,15 @@ const mockProducts = [
     ratings: 4.7,
     totalPrice: 89.99,
     discountedPrice: 59.99
+  },
+  {
+    id: 6,
+    name: 'Product 5',
+    description: 'A stylish product with advanced features to meet all your needs.',
+    image:{Img1},
+    ratings: 4.7,
+    totalPrice: 89.99,
+    discountedPrice: 59.99
   }
 ];
 

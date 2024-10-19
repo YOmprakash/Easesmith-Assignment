@@ -4,8 +4,10 @@ import mockProducts from "../data";
 import img91 from "../assets/image91.png";
 import { FiSearch } from "react-icons/fi";
 import FilterSection from '../components/FilterSection';
+import Footer from "../components/Footer";
 const ProductListingPage = () => {
   return (
+    <>
     <div className="container p-6 mx-auto ">
       {/* Search Bar Section */}
       <div className="flex items-center justify-center max-w-[500px] mx-auto mb-10 border-b-2">
@@ -49,7 +51,7 @@ const ProductListingPage = () => {
       </div>
 
       <div className="flex flex-col gap-6 md:flex-row">
-      <aside className="w-full p-4 bg-white border border-gray-200 rounded md:w-1/4">
+      <aside className="w-full md:w-1/4">
           <FilterSection />
         </aside>
       {/* Product Grid */}
@@ -60,6 +62,8 @@ const ProductListingPage = () => {
       </div>
       </div>
     </div>
+    <Footer/> 
+    </>
   );
 };
 

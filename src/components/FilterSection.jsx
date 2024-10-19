@@ -18,7 +18,7 @@ const FilterSection = () => {
       <div className="pb-3  mb-2 border-b border-[#A8A8A8]">
         <div className="flex items-center justify-between cursor-pointer" >
           <h3 className="">Types of Plants</h3>
-           <FaPlus color="#6E6E6E"/>
+           <FaPlus  />
         </div>
         
       </div>
