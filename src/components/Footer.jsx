@@ -10,7 +10,7 @@ import { FaSquareThreads } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="py-20 bg-[#F0FFE5] ">
-      <div className="px-20">
+      <div className="px-4 md:px-20">
         <div className="container grid grid-cols-1 gap-6 mx-auto md:grid-cols-5">
           {/* Subscribe to our newsletter */}
           <div className="col-span-1">
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
 
           {/* About Us */}
-          <div className="ml-4 ">
+          <div className="md:ml-4 ">
             <h3 className="mb-4 text-[20px] text-black font-[500]">ABOUT US</h3>
             <ul className="space-y-2 text-[15px] font-[500]  text-[#999999]">
               <li>Our Story</li>
@@ -94,7 +94,7 @@ const Footer = () => {
             <h3 className="text-[22px] text-black leading-9 font-[500]">
               CHAPERONE
             </h3>
-            <p className="text-[16px] font-normal text-[#838383]">
+            <p className="text-[16px] text-left  font-normal text-[#838383]">
               Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum quidem aut
               necessitatibus enim ut internos accusantium a numquam autem ab
               rerum omnis. Non molestiae ratione et laborum doloribus aut
@@ -134,7 +134,7 @@ const Footer = () => {
       </div>
       <hr className="w-full my-6 border-[#000]" />
       
-      <span className="mt-4 ml-20 text-[16px] font-[500] text-[#999999]">
+      <span className="mt-4 ml-2 md:ml-20 text-[16px] font-[500] text-[#999999]">
           © 2023, chaperone.com All rights reserved.
         </span>
     </footer>
