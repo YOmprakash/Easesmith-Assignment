@@ -10,6 +10,9 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'], // Adding the Inter font
       },
+      rotate: {
+        '134': '133.99deg', // Add a custom rotation angle
+      },
     },
   
   },

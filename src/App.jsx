@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import toast CSS
 
@@ -16,9 +16,10 @@ function App() {
     setCartQuantity(prevQuantity => prevQuantity + quantity);
   };
 
+
   return (
     <Router>
-      <Header cartQuantity={cartQuantity} />
+  <Header cartQuantity={cartQuantity} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ProductListingPage updateCartQuantity={updateCartQuantity} />} />
