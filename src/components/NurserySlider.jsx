@@ -1,68 +1,67 @@
-import React from "react";
+import img from '../assets/story.png'
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './NurserySlider.css'
 
 function NurserySlider() {
+  const stories = [
+    { id: 1, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 2, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 3, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 4, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 5, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 6, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 7, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 8, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 9, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+    { id: 10, image: img, description: "Lorem ipsum dolor sit amet. Aut ipsam illum et nostrum." },
+  ];
+
   var settings = {
-    dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 6,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
-    <div className="slider-container">
+    <div className="w-full px-4 py-8 mx-auto">
       <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div>
+        {stories.map((story) => (
+          <div key={story.id}>
+            <div className="flex flex-col items-center justify-center text-center">
+              <img src={story.image} alt={`story-${story.id}`} className="w-[120px]" />
+              <p className="text-[#838383] font-[500] text-sm mt-4">{story.description}</p>
+            </div>
+          </div>
+        ))}
       </Slider>
     </div>
   );

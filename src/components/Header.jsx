@@ -6,6 +6,7 @@ import { LuUser2 } from "react-icons/lu";
 import { FiMenu, FiX } from "react-icons/fi"; // For Hamburger Menu and Close
 import Logo from "../assets/logo.png";
 import TopBanner from "./TopBanner";
+import { AiOutlineDown } from "react-icons/ai";
 
 const Header = ({cartQuantity}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
@@ -79,22 +80,23 @@ const Header = ({cartQuantity}) => {
               }`}
             >
               Plants & Pots
+         
             </Link>
             <Link
               to="/about"
-              className={`hover:text-[#F3A939] ${
+              className={`hover:text-[#F3A939] flex items-center ${
                 location.pathname === "/about" ? "text-[#F3A939]" : ""
               }`}
             >
-              Tools
+              Tools <AiOutlineDown color="#000" className="mt-1 ml-1 font-bold" />
             </Link>
             <Link
               to="/contact"
-              className={`hover:text-[#F3A939] ${
+              className={`hover:text-[#F3A939] flex items-center ${
                 location.pathname === "/contact" ? "text-[#F3A939]" : ""
               }`}
             >
-              Our Services
+              Our Services <AiOutlineDown size={16} color="#000" className="mt-1 ml-1 font-bold" />
             </Link>
             <Link
               to="/blog"
@@ -173,7 +175,7 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/about" ? "text-[#F3A939]" : ""
               }`}
             >
-              Tools
+              Tools 
             </Link>
             <Link
               to="/contact"

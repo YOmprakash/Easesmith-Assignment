@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai'; // React Icon for the wishlist heart
+import { AiOutlineDown } from 'react-icons/ai'; 
 
 import {Link} from 'react-router-dom';
 import AddToCartModal from './AddToCartModal';
@@ -32,8 +33,8 @@ const ProductCard = ({ product,updateCartQuantity }) => {
   return (
     <div className="w-full mx-auto overflow-hidden sm:w-64 ">
       {/* Product Image with Wishlist Icon */}
-      <div className="relative border border-[#000] border-opacity-30 md:max-w-[268px]  h-[310px]">
-        <img src={image} alt={name} className="object-contain w-full max-w-[230px] h-[230px] mt-8 mx-auto" />
+      <div className="relative border border-[#000] border-opacity-30 md:max-w-[268px]  h-[310px] ">
+        <img src={image} alt={name} className="object-contain w-full max-w-[230px] h-[230px] mt-8 mx-auto " />
         <button className="absolute text-gray-500 top-3 right-3 ">
           <AiOutlineHeart size={25}  className='hover:text-[#165315] text-[#575757]'  />
         </button>

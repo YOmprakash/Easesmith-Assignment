@@ -4,7 +4,7 @@ import mockProducts from "../data";
 
 import FilterSection from '../components/FilterSection';
 import Footer from "../components/Footer";
-// import NurserySlider from "../components/NurserySlider";
+import NurserySlider from "../components/NurserySlider";
 import SearchBar from "../components/SearchBar"; // Import your new SearchBar component
 import { useState } from "react";
 
@@ -57,7 +57,8 @@ const ProductListingPage = ({updateCartQuantity}) => {
 
      
 <div className="py-5">
-{/* <NurserySlider /> */}
+<h1 className="text-[#000] font-semibold text-2xl">Nursery</h1>
+<NurserySlider />
 <p>slider</p>
 </div>
      

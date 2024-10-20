@@ -1,0 +1,18 @@
+/* NurserySlider.css */
+
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick"; /* Ensure the slick icon font is used */
+  font-size: 20px;
+  color: #838383;
+
+}
+
+.slick-prev:before {
+  content: "←"; /* Unicode for left arrow */
+}
+
+.slick-next:before {
+  content: "→"; /* Unicode for right arrow */
+}
