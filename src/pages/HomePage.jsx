@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import Image from '../assets/homepage-img2.jpg';
 const HomePage = () => {
   return (
@@ -17,10 +18,12 @@ const HomePage = () => {
       alt="Beautiful Indoor Plants" 
       className="object-contain w-full max-w-[600px]  mx-auto mb-8 rounded-lg"
     />
-    <button className="px-6 py-3 text-white bg-green-600 rounded-full hover:bg-green-800" onClick={() => window.location.href = '/shop'}>
+    <Link to='/shop'>
+    <button className="px-6 py-3 text-white bg-green-600 rounded-full hover:bg-green-800" >
       Explore Plants
       
     </button>
+    </Link>
   </section>
 
   
