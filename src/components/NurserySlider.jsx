@@ -57,8 +57,8 @@ function NurserySlider() {
         {stories.map((story) => (
           <div key={story.id}>
             <div className="flex flex-col items-center justify-center text-center">
-              <img src={story.image} alt={`story-${story.id}`} className="w-[120px]" />
-              <p className="text-[#838383] font-[500] text-sm mt-4">{story.description}</p>
+              <img src={story.image} alt={`story-${story.id}`} className="w-[100px] object-contain " />
+              <p className="text-[#838383] px-4 font-[500] text-sm mt-4">{story.description}</p>
             </div>
           </div>
         ))}

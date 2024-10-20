@@ -95,7 +95,7 @@ const ProductListingPage = ({updateCartQuantity}) => {
         ))}
       </div>
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-6 mb-6">
+      <div className="flex flex-wrap justify-center mt-6 mb-6 space-x-2">
   <button
     className={`px-4 py-2 mr-2 ${currentPage === 1 ? 'bg-[#F3A939] text-[#F0FFE5] cursor-not-allowed' : 'bg-[#165315] text-[#F0FFE5] hover:bg-[#144D14]'}`}
     onClick={() => handlePageChange(currentPage - 1)}
