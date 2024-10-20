@@ -30,14 +30,16 @@ const Header = ({cartQuantity}) => {
         <div className="container flex items-center justify-between px-4 mx-auto">
           {/* Left Section: Logo */}
 
-          <div className="flex items-center">
+         
           <Link to='/'>
+          <div className="flex items-center">
             <img src={Logo} alt="Logo" className="object-contain mr-2 w-14" />
             <span className="text-2xl font-semibold hidden md:block text-[#0F4811]">
               Chaperone
             </span>
+            </div>
             </Link>
-          </div>
+          
 
           {/* Right Section for Mobile: Icons (Profile, Cart, and Menu) */}
           <div className="flex items-center space-x-4 md:hidden">
