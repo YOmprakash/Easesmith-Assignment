@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaInstagram,
   FaFacebook,
@@ -129,14 +128,12 @@ const Footer = () => {
           </div>
         </div>
         {/* Copyright */}
-        
-        
       </div>
       <hr className="w-full my-6 border-[#000]" />
-      
+
       <span className="mt-4 ml-2 md:ml-20 text-[16px] font-[500] text-[#999999]">
-          © 2023, chaperone.com All rights reserved.
-        </span>
+        © 2023, chaperone.com All rights reserved.
+      </span>
     </footer>
   );
 };

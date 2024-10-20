@@ -1,24 +1,21 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // Import Link and useLocation
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import { LiaShoppingCartSolid } from "react-icons/lia";
 import { LuUser2 } from "react-icons/lu";
-import { FiMenu, FiX } from "react-icons/fi"; // For Hamburger Menu and Close
+import { FiMenu, FiX } from "react-icons/fi";
 import Logo from "../assets/logo.png";
 import TopBanner from "./TopBanner";
 import { AiOutlineDown } from "react-icons/ai";
 
-const Header = ({cartQuantity}) => {
+const Header = ({ cartQuantity }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
-  
-  const location = useLocation(); // Get the current location (path)
- 
- 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu open/close
-  };
 
- 
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -30,16 +27,14 @@ const Header = ({cartQuantity}) => {
         <div className="container flex items-center justify-between px-4 mx-auto">
           {/* Left Section: Logo */}
 
-         
-          <Link to='/'>
-          <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="object-contain mr-2 w-14" />
-            <span className="text-2xl font-semibold hidden md:block text-[#0F4811]">
-              Chaperone
-            </span>
+          <Link to="/">
+            <div className="flex items-center">
+              <img src={Logo} alt="Logo" className="object-contain mr-2 w-14" />
+              <span className="text-2xl font-semibold hidden md:block text-[#0F4811]">
+                Chaperone
+              </span>
             </div>
-            </Link>
-          
+          </Link>
 
           {/* Right Section for Mobile: Icons (Profile, Cart, and Menu) */}
           <div className="flex items-center space-x-4 md:hidden">
@@ -64,12 +59,16 @@ const Header = ({cartQuantity}) => {
             {isMenuOpen ? (
               <FiX size={28} className="cursor-pointer" onClick={toggleMenu} />
             ) : (
-              <FiMenu size={28} className="cursor-pointer" onClick={toggleMenu} />
+              <FiMenu
+                size={28}
+                className="cursor-pointer"
+                onClick={toggleMenu}
+              />
             )}
           </div>
 
-           {/* Navigation Links for Desktop */}
-           <nav className="hidden md:flex space-x-6 text-[16px] font-[500] text-[#000000]">
+          {/* Navigation Links for Desktop */}
+          <nav className="hidden md:flex space-x-6 text-[16px] font-[500] text-[#000000]">
             <Link
               to="/"
               className={`hover:text-[#F3A939] ${
@@ -85,7 +84,6 @@ const Header = ({cartQuantity}) => {
               }`}
             >
               Plants & Pots
-         
             </Link>
             <Link
               to="/about"
@@ -93,7 +91,8 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/about" ? "text-[#F3A939]" : ""
               }`}
             >
-              Tools <AiOutlineDown color="#000" className="mt-1 ml-1 font-bold" />
+              Tools{" "}
+              <AiOutlineDown color="#000" className="mt-1 ml-1 font-bold" />
             </Link>
             <Link
               to="/contact"
@@ -101,7 +100,12 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/contact" ? "text-[#F3A939]" : ""
               }`}
             >
-              Our Services <AiOutlineDown size={16} color="#000" className="mt-1 ml-1 font-bold" />
+              Our Services{" "}
+              <AiOutlineDown
+                size={16}
+                color="#000"
+                className="mt-1 ml-1 font-bold"
+              />
             </Link>
             <Link
               to="/blog"
@@ -109,7 +113,7 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/blog" ? "text-[#F3A939]" : ""
               }`}
             >
-             Blog
+              Blog
             </Link>
             <Link
               to="/story"
@@ -125,7 +129,7 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/faqs" ? "text-[#F3A939]" : ""
               }`}
             >
-              FAQs  
+              FAQs
             </Link>
             {/* Add more links as needed */}
           </nav>
@@ -138,11 +142,13 @@ const Header = ({cartQuantity}) => {
                 size={22}
                 className="text-black font-[500] hover:text-[#F3A939] cursor-pointer"
               />
-              <span className="text-sm hidden md:block font-[500]">My Profile</span>
+              <span className="text-sm hidden md:block font-[500]">
+                My Profile
+              </span>
             </div>
 
             {/* Cart Icon */}
-            <div className="relative flex flex-col items-center "> 
+            <div className="relative flex flex-col items-center ">
               <LiaShoppingCartSolid
                 size={28}
                 className="text-black font-[500]   cursor-pointer"
@@ -158,7 +164,7 @@ const Header = ({cartQuantity}) => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="flex flex-col h-full px-4 py-2 mt-4 space-y-4 bg-white md:hidden">
-          <Link
+            <Link
               to="/"
               className={`hover:text-[#F3A939] ${
                 location.pathname === "/" ? "text-[#F3A939]" : ""
@@ -180,7 +186,7 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/about" ? "text-[#F3A939]" : ""
               }`}
             >
-              Tools 
+              Tools
             </Link>
             <Link
               to="/contact"
@@ -196,7 +202,7 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/blog" ? "text-[#F3A939]" : ""
               }`}
             >
-             Blog
+              Blog
             </Link>
             <Link
               to="/story"
@@ -212,9 +218,8 @@ const Header = ({cartQuantity}) => {
                 location.pathname === "/faqs" ? "text-[#F3A939]" : ""
               }`}
             >
-              FAQs  
+              FAQs
             </Link>
-            
           </nav>
         )}
       </header>

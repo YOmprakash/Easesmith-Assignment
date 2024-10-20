@@ -1,19 +1,44 @@
-import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const pages = [...Array(totalPages).keys()].map(n => n + 1);
-
   return (
-    <div className="flex justify-center space-x-2 mt-6">
-      {pages.map(page => (
+    <div className="flex flex-wrap justify-center mt-6 mb-6 space-x-2">
+      <button
+        className={`px-4 py-2 mr-2 ${
+          currentPage === 1
+            ? 'bg-[#F3A939] text-[#F0FFE5] cursor-not-allowed'
+            : 'bg-[#165315] text-[#F0FFE5] hover:bg-[#144D14]'
+        }`}
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        Previous
+      </button>
+
+      {Array.from({ length: totalPages }, (_, index) => (
         <button
-          key={page}
-          className={`p-2 rounded-lg ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-          onClick={() => onPageChange(page)}
+          key={index + 1}
+          className={`px-4 py-2 mx-1 ${
+            currentPage === index + 1
+              ? 'bg-[#F0FFE5] border border-[#165315] text-[#000]'
+              : 'bg-[#6A6A6A] text-white hover:bg-[#575757]'
+          }`}
+          onClick={() => onPageChange(index + 1)}
         >
-          {page}
+          {index + 1}
         </button>
       ))}
+
+      <button
+        className={`px-4 py-2 ml-2 ${
+          currentPage === totalPages
+            ? 'bg-[#F3A939] text-[#F0FFE5] cursor-not-allowed'
+            : 'bg-[#165315] text-[#F0FFE5] hover:bg-[#144D14]'
+        }`}
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+        Next
+      </button>
     </div>
   );
 };
